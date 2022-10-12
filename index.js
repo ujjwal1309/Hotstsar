@@ -1,3 +1,6 @@
+
+//This is done by setinterval
+
 // function carousel(){
 //     let image = ['https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6451/1376451-h-66d561b15e4e', 'https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/4248/1364248-h-04994afb88d4', 'https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/3268/1173268-h-4407e8891a7e']
 
@@ -20,18 +23,9 @@
 
 // carousel()
 
-const swiper = new Swiper(".swiper", {
-  autoplay: {
-    delay: 3000,
-    dispalyOnInteraction: false,
-  },
-  loop: true,
+//This is done by swiper JS
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+
 
 function create(i, r) {
   this.image = i;
@@ -156,3 +150,9 @@ getData.then(function(res){
 .catch(function(res){
   console.log(res)
 })
+
+function searchMovies() {
+  let movieName = document.getElementById("search_movies").value;
+  localStorage.setItem('movie_name',movieName);
+  window.location.replace('page.html')
+}

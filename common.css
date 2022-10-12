@@ -1,0 +1,52 @@
+* {
+  background-color: rgb(20, 27, 40);
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  height: auto;
+}
+
+.swiper-slide1 {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(3, 11, 23);
+  cursor: pointer;
+}
+
+.swiper-slide1 > div {
+  /* border: 1px solid green; */
+  width: 60%;
+  color: white;
+  background-color: rgb(3, 11, 23);
+}
+
+.swiper-slide1 > div:nth-child(1) {
+  width: 40%;
+  padding-left: 30px;
+}
+
+.swiper-slide1 > div > img {
+  width: 100%;
+  
+}
+
+.swiper-slide1 > div > h2 + p {
+  margin: 20px 0;
+}
+
+.swiper-slide1 > div > p + p {
+  width: 70%;
+}
+
+.swiper-slide1 > div > p {
+  background-color: rgb(3, 11, 23);
+}
+
+.swiper-slide1 > div > h2 {
+  background-color: rgb(3, 11, 23);
+}
