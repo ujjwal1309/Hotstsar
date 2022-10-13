@@ -12,3 +12,5 @@ const swiper = new Swiper(".swiper", {
   });
 
 console.log(swiper)
+
+

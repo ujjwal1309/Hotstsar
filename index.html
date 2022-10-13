@@ -30,8 +30,11 @@
             </ul>
         </div>
         <div>
-            <div><input type="text" placeholder="Search" id="search_movies"><i style="cursor: pointer;" onclick="searchMovies()" id="" class="fa-solid fa-magnifying-glass"></i></div>
-            <div><button>Subscribe</button></div>
+            <div id="dropdown"><input oninput="debounce(searchMovies,1000)" type="text" placeholder="Search" id="search_movies"><i style="cursor: pointer;" onclick="searchMovies()" id="" class="fa-solid fa-magnifying-glass"></i>
+                <div id="dropdown-content" ></div>
+            </div>
+            <div><button onclick="nextPage()">Search</button>
+            </div>
             <ul>
                 <li><a href="">LOGIN</a></li>
             </ul>

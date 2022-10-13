@@ -1,4 +1,3 @@
-
 //This is done by setinterval
 
 // function carousel(){
@@ -25,97 +24,86 @@
 
 //This is done by swiper JS
 
-
-
 function create(i, r) {
   this.image = i;
   this.rating = r;
 }
 
-  let data = [];
-  let d1 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/8315/1358315-v-460de76e954a",
-    8.2
-  );
+let data = [];
+let d1 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/8315/1358315-v-460de76e954a",
+  8.2
+);
 
-  let d2 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/8561/1338561-v-e70f004341c2",
-    8.0
-  );
+let d2 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/8561/1338561-v-e70f004341c2",
+  8.0
+);
 
-  let d3 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/8938/1318938-v-c6774b84e0ce",
-    7.4
-  );
+let d3 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/8938/1318938-v-c6774b84e0ce",
+  7.4
+);
 
-  let d4 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5858/1345858-v-629a422bee2a",
-    7.2
-  );
+let d4 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5858/1345858-v-629a422bee2a",
+  7.2
+);
 
-  let d5 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/7151/1317151-v-3325efe236e4",
-    8.1
-  );
+let d5 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/7151/1317151-v-3325efe236e4",
+  8.1
+);
 
-  let d6 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5917/1215917-v-ecd0190fad0d",
-    7.6
-  );
+let d6 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5917/1215917-v-ecd0190fad0d",
+  7.6
+);
 
-  let d7 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5433/1085433-v-47d02b0c676b",
-    7.8
-  );
+let d7 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5433/1085433-v-47d02b0c676b",
+  7.8
+);
 
-  let d8 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/9948/1279948-v-cc9471178e40",
-    7.0
-  );
+let d8 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/9948/1279948-v-cc9471178e40",
+  7.0
+);
 
-  let d9 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2249/1282249-v-901a544faba4",
-    6.5
-  );
+let d9 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2249/1282249-v-901a544faba4",
+  6.5
+);
 
-  let d10 = new create(
-    "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/69/1240069-v-8f3eaedecbc6",
-    8.2
-  );
+let d10 = new create(
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/69/1240069-v-8f3eaedecbc6",
+  8.2
+);
 
-  data.push(d1, d2, d3, d4, d5, d6, d7, d8, d9, d10);
+data.push(d1, d2, d3, d4, d5, d6, d7, d8, d9, d10);
 
-  let select=document.getElementById('select');
-  select.addEventListener('change',rankByPopularity);
+let select = document.getElementById("select");
+select.addEventListener("change", rankByPopularity);
 
-  function rankByPopularity(){
+function rankByPopularity() {
+  console.log(select.value);
 
-    console.log(select.value)
-
-  if(select.value=='asc')
-  {
-    data.sort((a,b) => a.rating-b.rating);
+  if (select.value == "asc") {
+    data.sort((a, b) => a.rating - b.rating);
     displayTable(data);
-  }
-  else if(select.value=='dsc')
-  {
-    data.sort((a,b)=>b.rating-a.rating);
+  } else if (select.value == "dsc") {
+    data.sort((a, b) => b.rating - a.rating);
     displayTable(data);
-  }
-  else if(select.value=='')
-  {
+  } else if (select.value == "") {
     window.location.reload();
   }
-
 }
 
-
 function displayTable(res) {
+  document.querySelector("#container").innerHTML = "";
 
-  document.querySelector('#container').innerHTML="";
-
-  let loader=document.getElementById('loader');
-  loader.style.display='none';
+  let loader = document.getElementById("loader");
+  loader.style.display = "none";
 
   res.forEach(function (el) {
     let div = document.createElement("div");
@@ -129,30 +117,89 @@ function displayTable(res) {
   });
 }
 
+let getData = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    let DS = data;
 
-let getData=new Promise(function(resolve,reject){
-  setTimeout(function(){
-    let DS=data;
-
-    if(DS!=null)
-    {
-      resolve(data)
+    if (DS != null) {
+      resolve(data);
+    } else {
+      reject("ERR: Server Could Not Get Movies Data");
     }
-    else{
-      reject('ERR: Server Could Not Get Movies Data');
-    }
-  },1000)
-})
+  }, 1000);
+});
 
-getData.then(function(res){
-  displayTable(res)
-})
-.catch(function(res){
-  console.log(res)
-})
+getData
+  .then(function (res) {
+    displayTable(res);
+  })
+  .catch(function (res) {
+    console.log(res);
+  });
 
 function searchMovies() {
   let movieName = document.getElementById("search_movies").value;
-  localStorage.setItem('movie_name',movieName);
-  window.location.replace('page.html')
+  localStorage.setItem("movie_name", movieName);
+  searchInput();
+  // window.location.replace('page.html');
+}
+
+async function searchInput() {
+  let movie_name = document.getElementById("search_movies").value;
+
+  try {
+    let response = await fetch(
+      `https://www.omdbapi.com/?apikey=e21bdea5&s=${movie_name}&page=1`
+    );
+
+    let data = await response.json();
+
+    let actual_data = data.Search;
+    console.log(actual_data);
+    appendMovies(actual_data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function appendMovies(data) {
+  document.getElementById("dropdown-content").innerHTML = null;
+
+  for (let i = 0; i < 5; i++) {
+    let div = document.createElement("div");
+    let div2 = document.createElement("div");
+    let div3 = document.createElement("div");
+
+    let img = document.createElement("img");
+    img.src = data[i].Poster;
+
+    let p = document.createElement("p");
+    p.textContent = data[i].Title;
+
+    div2.append(img);
+
+    div3.append(p);
+
+    div.append(div2, div3);
+
+    document.getElementById("dropdown-content").append(div);
+  }
+}
+
+let id;
+
+function debounce(func, delay) {
+  document.getElementById("dropdown-content").style.display = "block";
+  
+  if (id) {
+    clearTimeout(id);
+  }
+
+  id = setTimeout(function () {
+    func();
+  }, delay);
+}
+
+function nextPage() {
+  window.location.replace("page.html");
 }
